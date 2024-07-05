@@ -96,4 +96,18 @@ class arbolbinario{
       return -1;
     }
   }
+
+  public boolean soniguales(arbolbinario p2){
+    arbolbinario p1= this;
+    if(p1.getdato()!=p2.getdato()){
+      return false;
+    }
+    if((p1.izq==null && p2.izq==null) && (p1.der==null && p2.der==null)){
+      return true;
+    }
+    
+    return (p1.izq.soniguales(p2.izq) && p1.der.soniguales(p2.der));
+
+    
+  }
 }
